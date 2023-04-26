@@ -67,6 +67,17 @@ module.exports = {
       // timeoutBlocks: 200,
       skipDryRun: true,
     },
+    devnet: {
+      provider: () =>
+        new HDWalletProvider(
+          process.env.PRIVATE_KEY,
+          'https://rpc.connectednft.art:9650/ext/bc/2NXVLcGbemMjwyexwigxCoqn7UJ6DdeJdWNPxcWX4Y2eDem1aW/rpc',
+        ),
+      network_id: 133,
+      gas: 6500000,
+      gasPrice: utils.toWei('32', 'gwei'),
+      skipDryRun: true,
+    },
   },
 
   mocha: {
